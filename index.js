@@ -8,6 +8,7 @@ const formel = document.querySelector('form');
 
 function addItem(e) {
     e.preventDefault();
+    
 const title = document.getElementById("title-id").value;
 const author = document.getElementById("author-id").value;
 myli.innerHTML+=`        
