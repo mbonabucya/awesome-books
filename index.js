@@ -1,27 +1,25 @@
-const title = document.getElementById('title-id');
-const author = document.getElementById('author-id');
-var collection = document.querySelector('.collection');
-var myli = document.createElement('div');
-const addbtn =document.getElementById('add-btn');
+const title = document.getElementById("title-id").value;
+const author = document.getElementById("author-id").value;
+var container = document.querySelector(".collection ");
+var myli = document.createElement("div");
+const addbtn = document.getElementById("add-btn");
+const formel = document.querySelector('form');
 
 
-
-function addItem() {
-
-    myli.innerHTML = `
+function addItem(e) {
+    e.preventDefault();
+const title = document.getElementById("title-id").value;
+const author = document.getElementById("author-id").value;
+myli.innerHTML+=`        
 <p>
-${title.value}
+${title} 
 </p>
-<p">
- ${author.value}
+<p>
+${author}
 </p>
-<button id="remove-btn"><strong>Remove</strong></button>
-<hr><br/><br/>`
-
-collection.appendChild(myli);
-console.log(myli);
+<button class="remove-btn"><strong>Remove</strong></button>
+<hr>`
+container.appendChild(myli);
 }
 
-addbtn.addEventListener('click',addItem)
-
-
+formel.addEventListener('submit',addItem);
